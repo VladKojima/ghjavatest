@@ -19,3 +19,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B test --file ./back/pom.xml
+
+    - name: health check
+      run: curl --request GET \
+          --url "http://localhost:8080/health"
